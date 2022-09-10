@@ -19,6 +19,7 @@ public class Lab251 {
         System.out.println("Hi, I'm Shatha Almalki :)");
         System.out.println("Hi, I am Dana Baeisa");
         System.out.println("Hi, I am Lama ALghamdi :)");
+        System.out.println("Hi, I am Lina Khaled :) ");
         
     }
     
