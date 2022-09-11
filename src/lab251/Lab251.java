@@ -17,7 +17,7 @@ public class Lab251 {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Hi, I'm Shatha Almalki :)");
-        System.out.println("Hi, I am Dana Baeisa");
+        System.out.println("Hi, I am Dana Baeisa :)");
         System.out.println("Hi, I am Lama ALghamdi :)");
         System.out.println("Hi, I am Lina Khaled :) ");
         System.out.println("Hi, I am Ragad Sheikh :) ");
