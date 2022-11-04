@@ -1,6 +1,8 @@
 //------------------------------------------------------------------------------ 
 //import
 //------------------------------------------------------------------------------ 
+import classes.Admin;
+import classes.Flower;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -290,6 +292,13 @@ public class ManagerInterface extends javax.swing.JFrame {
     
     private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneButtonActionPerformed
         // TODO add your handling code here:
+        
+       String flowerType = flowerNameTextField.getText();// read flower type from admin
+       int flowerQuantity = Integer.parseInt(flowerQTYTextField.getText());// read number of flower from admin
+       double flowerPrice = Double.parseDouble(flowerPriceTextField.getText());// read the price of one flower from admin
+       Flower flower = new Flower(flowerType,flowerQuantity,flowerPrice); // create the new flower 
+       Admin.addFlower(flower);// add flower to the store
+       successfulAdditionLabel.setVisible(true);
     }//GEN-LAST:event_doneButtonActionPerformed
 
 //------------------------------------------------------------------------------ 
