@@ -72,7 +72,6 @@ public class AdminTest {
         boolean result = Admin.addFlower(f);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
 
     /**
@@ -93,12 +92,11 @@ public class AdminTest {
     @Test
     public void testAddFlower() {
         System.out.println("addFlower");
-        Flower f = null;
-        boolean expResult = false;
+        Flower f = new Flower("Jory",20,15);
+        // boolean expResult = true;
         boolean result = Admin.addFlower(f);
-        assertEquals(expResult, result);
+        assertTrue(result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
