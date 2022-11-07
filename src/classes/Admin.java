@@ -34,7 +34,7 @@ public class Admin {
         // If the flower has been added sucessfully, it will be equal to the latest flower in the array
         boolean isAdded = flowers.get(indx).equals(f);
         // Increase the variable to track the next flower
-        indx++;
+        if(isAdded==true)indx++;
         // True if added & false if not 
         return isAdded;
 
@@ -47,6 +47,7 @@ public class Admin {
             // If the type equals the entered type then delete it
             if (flowers.get(i).getFlowerType().equalsIgnoreCase(FlowerType)) {
                 flowers.remove(i);
+                indx--;
             }
             // Means the flower has been deleted
             return true;
