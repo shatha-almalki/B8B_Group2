@@ -1,33 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package classes;
 
-/**
- *
- * @author st
- */
 public class Flower {
-     private String FlowerType;
-    private int numOfFlower;
+
+    private String FlowerType;
+    private int quantity;
     private double price;
 
-    public Flower(String FlowerType, int numOfFlower, double price) {
+    public Flower(String FlowerType, int quantity, double price) {
         this.FlowerType = FlowerType;
-        this.numOfFlower = numOfFlower;
+        this.quantity = quantity;
         this.price = price;
     }
 
-   
-    
     public void setFlowerType(String FlowerType) {
         this.FlowerType = FlowerType;
     }
 
-    public void setNumOfFlower(int numOfFlower) {
-        this.numOfFlower = numOfFlower;
+    public void setNumOfFlower(int quantity) {
+        this.quantity = quantity;
     }
 
     public void setPrice(double price) {
@@ -39,7 +29,7 @@ public class Flower {
     }
 
     public int getNumOfFlower() {
-        return numOfFlower;
+        return quantity;
     }
 
     public double getPrice() {

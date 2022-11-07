@@ -1,52 +1,47 @@
-//------------------------------------------------------------------------------
-//import
-//------------------------------------------------------------------------------ 
+package FlowerApplication;
+
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.plaf.basic.BasicButtonUI;
-//------------------------------------------------------------------------------
 
 public class LoginInterface extends javax.swing.JFrame {
- public LoginInterface() {
+
+    public LoginInterface() {
         initComponents();
-        
-//------------------------------------------------------------------------------        
-//To change the appearance of the button
-//------------------------------------------------------------------------------                  
-       JButton [] btns = {toManagerPage, loginButton, forgetPassButton, signUButton };
+
+        // To change the appearance of the button
+        JButton[] btns = {toManagerPage, loginButton, forgetPassButton, signUButton};
         for (JButton btn : btns) {
-            btn.setBackground(new Color(225,218,211));
+            btn.setBackground(new Color(225, 218, 211));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent me) {
-                  }
+                }
 
                 @Override
                 public void mousePressed(MouseEvent me) {
-                     }
+                }
 
                 @Override
                 public void mouseReleased(MouseEvent me) {
-                   
-               }
+
+                }
 
                 @Override
                 public void mouseEntered(MouseEvent me) {
-                     btn.setBackground(new Color(209,190,190));
+                    btn.setBackground(new Color(209, 190, 190));
                 }
 
                 @Override
                 public void mouseExited(MouseEvent me) {
-                    btn.setBackground(new Color(225,218,211));
-               }
+                    btn.setBackground(new Color(225, 218, 211));
+                }
             });
         }
-//------------------------------------------------------------------------------  
-  
+
     }
 
     @SuppressWarnings("unchecked")
@@ -71,12 +66,13 @@ public class LoginInterface extends javax.swing.JFrame {
         signUButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(928, 630));
+        setPreferredSize(new java.awt.Dimension(850, 642));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(225, 218, 211));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 524));
 
-        pageTitleLabel.setFont(new java.awt.Font("Calibri", 1, 66)); // NOI18N
+        pageTitleLabel.setFont(new java.awt.Font("Broadway", 0, 77)); // NOI18N
         pageTitleLabel.setForeground(new java.awt.Color(176, 161, 191));
         pageTitleLabel.setText("Login");
 
@@ -86,7 +82,7 @@ public class LoginInterface extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
         loginButton.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        loginButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginButton.setForeground(new java.awt.Color(102, 102, 102));
         loginButton.setText("Let's Shop");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,23 +170,20 @@ public class LoginInterface extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(passTextField6)
+                            .addComponent(emailLabel)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(emailLabel)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addComponent(managerLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(toManagerPage))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(accountLabel)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(signUButton)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(10, 10, 10)
+                                        .addComponent(managerLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(toManagerPage))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(accountLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(signUButton))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(rememberMeCheckBox)
@@ -255,48 +248,40 @@ public class LoginInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passTextField6ActionPerformed
 
-//------------------------------------------------------------------------------
-//To navigate to the Home interface
-//------------------------------------------------------------------------------   
-    HomeInterface HomeInterface1 = null;
+
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-             
-                   if(HomeInterface1==null){
-                       HomeInterface1= new HomeInterface();
-                    }
-                HomeInterface1.setVisible(true);
-                this.setVisible(false);
+
+        // To navigate to the Home interface
+        HomeInterface HomeInterface1 = null;
+        if (HomeInterface1 == null) {
+            HomeInterface1 = new HomeInterface();
+        }
+        HomeInterface1.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_loginButtonActionPerformed
-//------------------------------------------------------------------------------
-    
-    
+
+
     private void rememberMeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rememberMeCheckBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rememberMeCheckBoxActionPerformed
 
-    
-//------------------------------------------------------------------------------
-//To navigate to the Manager interface
-//------------------------------------------------------------------------------     
-         ManagerInterface ManagerInterface1 = null;
+
     private void toManagerPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toManagerPageActionPerformed
-  
-           if(ManagerInterface1==null){
-           ManagerInterface1= new ManagerInterface();
+
+        // To navigate to the Manager interface
+        ManagerInterface ManagerInterface1 = null;
+        if (ManagerInterface1 == null) {
+            ManagerInterface1 = new ManagerInterface();
         }
         ManagerInterface1.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_toManagerPageActionPerformed
-//------------------------------------------------------------------------------
-    
-    
+
+
     private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
-//------------------------------------------------------------------------------
-//main
-//------------------------------------------------------------------------------ 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -328,8 +313,7 @@ public class LoginInterface extends javax.swing.JFrame {
             }
         });
     }
-//------------------------------------------------------------------------------
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel accountLabel;
     private javax.swing.JLabel emailLabel;

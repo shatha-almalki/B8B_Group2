@@ -1,51 +1,46 @@
-//------------------------------------------------------------------------------ 
-//import
-//------------------------------------------------------------------------------ 
+package FlowerApplication;
+
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicButtonUI;
 
-//------------------------------------------------------------------------------ 
-
 public class WelcomeInterface extends javax.swing.JFrame {
- public WelcomeInterface() {
+
+    public WelcomeInterface() {
         initComponents();
-        
-//------------------------------------------------------------------------------        
-//To change the appearance of the button
-//------------------------------------------------------------------------------       
-                JButton [] btns = { startButton };
+
+        // To change the appearance of the button
+        JButton[] btns = {startButton};
         for (JButton btn : btns) {
-            btn.setBackground(new Color(225,218,211));
+            btn.setBackground(new Color(225, 218, 211));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent me) {
-                  }
+                }
 
                 @Override
                 public void mousePressed(MouseEvent me) {
-                     }
+                }
 
                 @Override
                 public void mouseReleased(MouseEvent me) {
-                   
-               }
+
+                }
 
                 @Override
                 public void mouseEntered(MouseEvent me) {
-                     btn.setBackground(new Color(209,190,190));
+                    btn.setBackground(new Color(209, 190, 190));
                 }
 
                 @Override
                 public void mouseExited(MouseEvent me) {
-                    btn.setBackground(new Color(225,218,211));
-               }
+                    btn.setBackground(new Color(225, 218, 211));
+                }
             });
         }
-//------------------------------------------------------------------------------   
     }
 
     @SuppressWarnings("unchecked")
@@ -60,10 +55,11 @@ public class WelcomeInterface extends javax.swing.JFrame {
         startButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(928, 630));
+        setPreferredSize(new java.awt.Dimension(850, 642));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(225, 218, 211));
-        jPanel1.setPreferredSize(new java.awt.Dimension(900, 524));
+        jPanel1.setPreferredSize(new java.awt.Dimension(850, 642));
 
         pageTitleLabel2.setFont(new java.awt.Font("Broadway", 0, 55)); // NOI18N
         pageTitleLabel2.setForeground(new java.awt.Color(176, 161, 191));
@@ -76,10 +72,10 @@ public class WelcomeInterface extends javax.swing.JFrame {
         pageTitleLabel1.setText("Fresh From ");
 
         jPanel2.setBackground(new java.awt.Color(225, 218, 211));
-        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(176, 161, 191)));
 
-        startButton.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
-        startButton.setForeground(new java.awt.Color(255, 255, 255));
+        startButton.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        startButton.setForeground(new java.awt.Color(102, 102, 102));
         startButton.setText("Shop All Flowers");
         startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,69 +101,59 @@ public class WelcomeInterface extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
+                        .addGap(46, 46, 46)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(flowerPicBackgroundLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
                         .addComponent(pageTitleLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(pageTitleLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
-                        .addComponent(flowerPicBackgroundLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
+                        .addComponent(pageTitleLabel1)))
+                .addContainerGap(323, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(51, 51, 51)
                 .addComponent(pageTitleLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(pageTitleLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(flowerPicBackgroundLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(flowerPicBackgroundLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(124, 124, 124))))
+                        .addGap(101, 101, 101))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1099, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-//------------------------------------------------------------------------------
-//To navigate to the Login interface
-//------------------------------------------------------------------------------    
-    LoginInterface logintInterface1 = null;
+
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
 
-           if(logintInterface1==null){
-           logintInterface1= new LoginInterface();
+        // To navigate to the Login interface
+        LoginInterface logintInterface1 = null;
+        if (logintInterface1 == null) {
+            logintInterface1 = new LoginInterface();
         }
         logintInterface1.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_startButtonActionPerformed
-//------------------------------------------------------------------------------ 
-    
 
-//------------------------------------------------------------------------------ 
-//main
-//------------------------------------------------------------------------------ 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -199,7 +185,7 @@ public class WelcomeInterface extends javax.swing.JFrame {
             }
         });
     }
-//------------------------------------------------------------------------------ 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel flowerPicBackgroundLabel;
     private javax.swing.JPanel jPanel1;

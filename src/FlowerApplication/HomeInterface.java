@@ -1,87 +1,82 @@
-//------------------------------------------------------------------------------ 
-//import
-//------------------------------------------------------------------------------ 
+package FlowerApplication;
+
+import classes.Order;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicButtonUI;
-//------------------------------------------------------------------------------ 
-
 
 public class HomeInterface extends javax.swing.JFrame {
+
+    // Static arraylist of Order 
+    public static ArrayList<Order> newOrder = new ArrayList<Order>();
+
     public HomeInterface() {
         initComponents();
-        
-        
-//------------------------------------------------------------------------------ 
-//To change the appearance of the button
-//------------------------------------------------------------------------------         
-                JButton [] btns = { addButton1, addButton2, addButton3, addButton4 };
+
+        // To change the appearance of the button
+        JButton[] btns = {addButton1, addButton2, addButton3, addButton4};
         for (JButton btn : btns) {
-            btn.setBackground(new Color(225,218,211));
+            btn.setBackground(new Color(225, 218, 211));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent me) {
-                  }
+                }
 
                 @Override
                 public void mousePressed(MouseEvent me) {
-                     }
+                }
 
                 @Override
                 public void mouseReleased(MouseEvent me) {
-                   
-               }
+
+                }
 
                 @Override
                 public void mouseEntered(MouseEvent me) {
-                     btn.setBackground(new Color(209,190,190));
+                    btn.setBackground(new Color(209, 190, 190));
                 }
 
                 @Override
                 public void mouseExited(MouseEvent me) {
-                    btn.setBackground(new Color(225,218,211));
-               }
+                    btn.setBackground(new Color(225, 218, 211));
+                }
             });
         }
-        
- //- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --- -- -- -- -- -- -- -- -- -- 
- 
- 
-            JButton [] btns2 = { cartButton,homeButton,signOutButton };
+
+        JButton[] btns2 = {cartButton, homeButton, signOutButton};
         for (JButton btn1 : btns2) {
-            btn1.setBackground(new Color(207,196,199));
+            btn1.setBackground(new Color(207, 196, 199));
             btn1.setUI(new BasicButtonUI());
             btn1.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent me) {
-                  }
+                }
 
                 @Override
                 public void mousePressed(MouseEvent me) {
-                     }
+                }
 
                 @Override
                 public void mouseReleased(MouseEvent me) {
-                   
-               }
+
+                }
 
                 @Override
                 public void mouseEntered(MouseEvent me) {
-                     btn1.setBackground(new Color(209,190,190));
+                    btn1.setBackground(new Color(209, 190, 190));
                 }
 
                 @Override
                 public void mouseExited(MouseEvent me) {
-                    btn1.setBackground(new Color(207,196,199));
-               }
+                    btn1.setBackground(new Color(207, 196, 199));
+                }
             });
         }
- //------------------------------------------------------------------------------ 
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -96,7 +91,7 @@ public class HomeInterface extends javax.swing.JFrame {
         priceLabel2 = new javax.swing.JLabel();
         addButton2 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
-        qtyTextField2 = new javax.swing.JTextField();
+        Purple = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         flowerPanel1 = new javax.swing.JPanel();
         flowerPicLabel1 = new javax.swing.JLabel();
@@ -105,14 +100,14 @@ public class HomeInterface extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         addButton1 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        qtyTextField1 = new javax.swing.JTextField();
+        Blue = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         flowerPanel3 = new javax.swing.JPanel();
         flowerPicLabel3 = new javax.swing.JLabel();
         flowerNameLabel3 = new javax.swing.JLabel();
         priceLabel3 = new javax.swing.JLabel();
         addButton3 = new javax.swing.JButton();
-        qtyTextField3 = new javax.swing.JTextField();
+        Bag = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         flowerPanel4 = new javax.swing.JPanel();
@@ -120,7 +115,7 @@ public class HomeInterface extends javax.swing.JFrame {
         flowerNameLabel4 = new javax.swing.JLabel();
         addButton4 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
-        qtyTextField4 = new javax.swing.JTextField();
+        Vase = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         priceLabel4 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -133,7 +128,8 @@ public class HomeInterface extends javax.swing.JFrame {
         signOutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(928, 630));
+        setPreferredSize(new java.awt.Dimension(850, 642));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(225, 218, 211));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 524));
@@ -165,12 +161,17 @@ public class HomeInterface extends javax.swing.JFrame {
 
         addButton2.setText("ADD");
         addButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("QTY");
 
-        qtyTextField2.setBackground(new java.awt.Color(240, 240, 240));
-        qtyTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        Purple.setBackground(new java.awt.Color(240, 240, 240));
+        Purple.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(102, 102, 102));
@@ -181,7 +182,7 @@ public class HomeInterface extends javax.swing.JFrame {
         flowerPanel2Layout.setHorizontalGroup(
             flowerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, flowerPanel2Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(flowerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(flowerPanel2Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
@@ -197,8 +198,8 @@ public class HomeInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(flowerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(qtyTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Purple, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         flowerPanel2Layout.setVerticalGroup(
             flowerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,7 +217,7 @@ public class HomeInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(flowerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(qtyTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Purple, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -236,6 +237,11 @@ public class HomeInterface extends javax.swing.JFrame {
         priceLabel1.setText("150");
 
         addButton1.setText("ADD");
+        addButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -255,8 +261,8 @@ public class HomeInterface extends javax.swing.JFrame {
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("QTY");
 
-        qtyTextField1.setBackground(new java.awt.Color(240, 240, 240));
-        qtyTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        Blue.setBackground(new java.awt.Color(240, 240, 240));
+        Blue.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(102, 102, 102));
@@ -281,7 +287,7 @@ public class HomeInterface extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(flowerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(qtyTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Blue, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(flowerPanel1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addComponent(priceLabel1)
@@ -306,7 +312,7 @@ public class HomeInterface extends javax.swing.JFrame {
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(qtyTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Blue, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -326,9 +332,14 @@ public class HomeInterface extends javax.swing.JFrame {
         priceLabel3.setText("200");
 
         addButton3.setText("ADD");
+        addButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButton3ActionPerformed(evt);
+            }
+        });
 
-        qtyTextField3.setBackground(new java.awt.Color(240, 240, 240));
-        qtyTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        Bag.setBackground(new java.awt.Color(240, 240, 240));
+        Bag.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("QTY");
@@ -357,12 +368,12 @@ public class HomeInterface extends javax.swing.JFrame {
                 .addComponent(jLabel23)
                 .addGap(56, 56, 56))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, flowerPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(11, Short.MAX_VALUE)
                 .addComponent(addButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(flowerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(qtyTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bag, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
         flowerPanel3Layout.setVerticalGroup(
@@ -381,7 +392,7 @@ public class HomeInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(flowerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(qtyTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bag, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -395,13 +406,18 @@ public class HomeInterface extends javax.swing.JFrame {
 
         addButton4.setText("ADD");
         addButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(169, 156, 181));
         jLabel16.setText("<html> <body><div align=\"center\"> Choose the flowers you like<br>  and leave the arrangement to us</div> </body> </html>");
 
-        qtyTextField4.setBackground(new java.awt.Color(240, 240, 240));
-        qtyTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        Vase.setBackground(new java.awt.Color(240, 240, 240));
+        Vase.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("QTY");
@@ -433,7 +449,7 @@ public class HomeInterface extends javax.swing.JFrame {
                         .addGroup(flowerPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(flowerPanel4Layout.createSequentialGroup()
-                                .addComponent(qtyTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Vase, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(priceLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -456,7 +472,7 @@ public class HomeInterface extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(flowerPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(addButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(qtyTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Vase, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(priceLabel4)
                             .addComponent(jLabel25)))
                     .addComponent(flowerPicLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -539,7 +555,7 @@ public class HomeInterface extends javax.swing.JFrame {
                 .addComponent(cartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(signOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(237, Short.MAX_VALUE))
             .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(menuPanelLayout.createSequentialGroup()
                     .addGap(46, 46, 46)
@@ -564,7 +580,7 @@ public class HomeInterface extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(flowerPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -573,9 +589,9 @@ public class HomeInterface extends javax.swing.JFrame {
                             .addComponent(flowerPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(flowerPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(flowerPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(55, 55, 55))))
+                        .addGap(26, 26, 26))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,15 +605,16 @@ public class HomeInterface extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(flowerPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                             .addComponent(flowerPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
-                            .addComponent(flowerPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))
+                            .addComponent(flowerPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(flowerPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(348, Short.MAX_VALUE))))
+                            .addComponent(flowerPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -608,44 +625,85 @@ public class HomeInterface extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-//------------------------------------------------------------------------------
-//To navigate to the Cart interface
-//------------------------------------------------------------------------------     
-     CartInterface CartInterface1 = null;  
+
     private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
-              if(CartInterface1==null){
-                       CartInterface1= new CartInterface();
-                    }
-                CartInterface1.setVisible(true);
-                this.setVisible(false);
+
+        // To navigate to the Cart interface  
+        CartInterface CartInterface1 = null;
+        if (CartInterface1 == null) {
+            CartInterface1 = new CartInterface();
+        }
+        CartInterface1.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_cartButtonActionPerformed
-//------------------------------------------------------------------------------
-    
-    
-//------------------------------------------------------------------------------
-//To navigate to the Login interface
-//------------------------------------------------------------------------------  
-    LoginInterface logintInterface2 = null; 
+
+
     private void signOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signOutButtonActionPerformed
-    
-           if(logintInterface2==null){
-           logintInterface2= new LoginInterface();
+
+        // To navigate to the Login interface
+        LoginInterface logintInterface2 = null;
+        if (logintInterface2 == null) {
+            logintInterface2 = new LoginInterface();
         }
         logintInterface2.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_signOutButtonActionPerformed
-//------------------------------------------------------------------------------
-    
-//------------------------------------------------------------------------------ 
-//main
-//------------------------------------------------------------------------------ 
+
+    private void addButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButton1ActionPerformed
+
+        // Read customer input 
+        int blueQ = Integer.parseInt(Blue.getText());
+        // New object of Order 
+        Order blue = new Order(blueQ, "Blue Flower", 150);
+        // Update newOrder array 
+        newOrder.add(blue);
+        // To delete after added the item to cart
+        Blue.setText(null);
+    }//GEN-LAST:event_addButton1ActionPerformed
+
+    private void addButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButton2ActionPerformed
+
+        // Read customer input 
+        int purpleQ = Integer.parseInt(Purple.getText());
+        // New object of Order 
+        Order purple = new Order(purpleQ, "Purple Flower", 170);
+        // Update newOrder array 
+        newOrder.add(purple);
+        // To delete after added the item to cart
+        Purple.setText(null);
+    }//GEN-LAST:event_addButton2ActionPerformed
+
+    private void addButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButton3ActionPerformed
+
+        // Read customer input 
+        int bagQ = Integer.parseInt(Bag.getText());
+        // New object of Order 
+        Order bag = new Order(bagQ, "Flower Bag", 200);
+        // Update newOrder array 
+        newOrder.add(bag);
+        // To delete after added the item to cart
+        Bag.setText(null);
+
+    }//GEN-LAST:event_addButton3ActionPerformed
+
+    private void addButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButton4ActionPerformed
+
+        // Read customer input 
+        int vaseQ = Integer.parseInt(Vase.getText());
+        // New object of Order 
+        Order vase = new Order(vaseQ, "Flower Vase", 200);
+        // Update newOrder array 
+        newOrder.add(vase);
+        // To delete after added the item to cart
+        Vase.setText(null);
+    }//GEN-LAST:event_addButton4ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -677,9 +735,12 @@ public class HomeInterface extends javax.swing.JFrame {
             }
         });
     }
-//------------------------------------------------------------------------------ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Bag;
+    private javax.swing.JTextField Blue;
+    private javax.swing.JTextField Purple;
+    private javax.swing.JTextField Vase;
     private javax.swing.JButton addButton1;
     private javax.swing.JButton addButton2;
     private javax.swing.JButton addButton3;
@@ -718,10 +779,6 @@ public class HomeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel priceLabel2;
     private javax.swing.JLabel priceLabel3;
     private javax.swing.JLabel priceLabel4;
-    private javax.swing.JTextField qtyTextField1;
-    private javax.swing.JTextField qtyTextField2;
-    private javax.swing.JTextField qtyTextField3;
-    private javax.swing.JTextField qtyTextField4;
     private javax.swing.JButton signOutButton;
     // End of variables declaration//GEN-END:variables
 }

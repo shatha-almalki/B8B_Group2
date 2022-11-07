@@ -1,19 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package classes;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author st
- */
 public class Admin {
-     private static ArrayList<Flower>flowers = new ArrayList<>(); // to store all flowers avaiable in the store
-    private static int indx = 0; // to track the flowers that have been added
+
+    // To store all flowers avaiable in the store
+    private static ArrayList<Flower> flowers = new ArrayList<>();
+    // To track the flowers that have been added
+    private static int indx = 0;
 
     public static ArrayList<Flower> getFlowers() {
         return flowers;
@@ -30,40 +24,34 @@ public class Admin {
     public static void setIndx(int indx) {
         Admin.indx = indx;
     }
-    
-    // this method is responsible to add any new flower to the store
-    // it will require first to create a flower object (new Flower) then call this method to insert the flower into the store
+
+    // This method is responsible to add any new flower to the store
+    // It will require first to create a flower object (new Flower) then call this method to insert the flower into the store
     public static boolean addFlower(Flower f) {
-        
-        flowers.add(f); // add the flower to the store (array)
-        // if the flower has been added sucessfully, it will be equal to the latest flower in the array
-        boolean isAdded = flowers.get(indx).equals(f); 
-        indx++; // increase the variable to track the next flower
-        return isAdded; // true if added & false if not 
-       
-    
-   }
-    
-    public static boolean deleteFlower(String FlowerType) {
-       for(int i=0;i<flowers.size();i++){
-        if(flowers.get(i).getFlowerType().equalsIgnoreCase(FlowerType))
-            flowers.remove(i);
-        return true;
+
+        // Add the flower to the store (array)
+        flowers.add(f);
+        // If the flower has been added sucessfully, it will be equal to the latest flower in the array
+        boolean isAdded = flowers.get(indx).equals(f);
+        // Increase the variable to track the next flower
+        indx++;
+        // True if added & false if not 
+        return isAdded;
+
     }
-       return false;
-   }
-    
-    public void checkMessages(){
-       
-   }
-    public void contactDeliveryMan() {
-       
-   }
-    public void perpareOrder() {
-       
-   }
-    public void generateReport() {
-       
-   }
- 
+
+    // This method is responsible to delet any flower
+    public static boolean deleteFlower(String FlowerType) {
+        // Loop to search in the array
+        for (int i = 0; i < flowers.size(); i++) {
+            // If the type equals the entered type then delete it
+            if (flowers.get(i).getFlowerType().equalsIgnoreCase(FlowerType)) {
+                flowers.remove(i);
+            }
+            // Means the flower has been deleted
+            return true;
+        }
+        return false;
+    }
+
 }

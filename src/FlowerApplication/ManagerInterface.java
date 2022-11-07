@@ -1,6 +1,5 @@
-//------------------------------------------------------------------------------ 
-//import
-//------------------------------------------------------------------------------ 
+package FlowerApplication;
+
 import classes.Admin;
 import classes.Flower;
 import java.awt.Color;
@@ -8,55 +7,48 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicButtonUI;
-//------------------------------------------------------------------------------ 
- 
+
 public class ManagerInterface extends javax.swing.JFrame {
+
     public ManagerInterface() {
         initComponents();
-        
-        
-//------------------------------------------------------------------------------
-//To hide the addition confirmation sentence
-//------------------------------------------------------------------------------
+
+        // To hide the addition confirmation sentence
         successfulAdditionLabel.setVisible(false);
-//------------------------------------------------------------------------------
 
-
-//------------------------------------------------------------------------------        
-//To change the appearance of the button
-//------------------------------------------------------------------------------
-                JButton [] btns = {signOutButton, doneButton };
+        // To change the appearance of the button
+        JButton[] btns = {signOutButton, doneButton};
         for (JButton btn : btns) {
-            btn.setBackground(new Color(207,196,199));
+            btn.setBackground(new Color(207, 196, 199));
             btn.setUI(new BasicButtonUI());
             btn.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent me) {
-                  }
+                }
 
                 @Override
                 public void mousePressed(MouseEvent me) {
-                     }
+                }
 
                 @Override
                 public void mouseReleased(MouseEvent me) {
-                   
-               }
+
+                }
 
                 @Override
                 public void mouseEntered(MouseEvent me) {
-                     btn.setBackground(new Color(209,190,190));
+                    btn.setBackground(new Color(209, 190, 190));
                 }
 
                 @Override
                 public void mouseExited(MouseEvent me) {
-                    btn.setBackground(new Color(207,196,199));
-               }
+                    btn.setBackground(new Color(207, 196, 199));
+                }
             });
         }
-//------------------------------------------------------------------------------
 
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -79,7 +71,8 @@ public class ManagerInterface extends javax.swing.JFrame {
         subtitleLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(928, 630));
+        setPreferredSize(new java.awt.Dimension(850, 642));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(225, 218, 211));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 524));
@@ -127,22 +120,55 @@ public class ManagerInterface extends javax.swing.JFrame {
 
         flowerNameTextField.setBackground(new java.awt.Color(240, 240, 240));
         flowerNameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        flowerNameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                flowerNameTextFieldMouseClicked(evt);
+            }
+        });
+        flowerNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                flowerNameTextFieldActionPerformed(evt);
+            }
+        });
 
         flowerQTYTextField.setBackground(new java.awt.Color(240, 240, 240));
         flowerQTYTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        flowerQTYTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                flowerQTYTextFieldMouseClicked(evt);
+            }
+        });
+        flowerQTYTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                flowerQTYTextFieldActionPerformed(evt);
+            }
+        });
 
         flowerPriceTextField.setBackground(new java.awt.Color(240, 240, 240));
         flowerPriceTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        flowerPriceTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                flowerPriceTextFieldMouseClicked(evt);
+            }
+        });
+        flowerPriceTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                flowerPriceTextFieldActionPerformed(evt);
+            }
+        });
 
         flowerPriceLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        flowerPriceLabel.setForeground(new java.awt.Color(255, 255, 255));
         flowerPriceLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flowerPriceLabel.setText("FLOWER PRICE");
 
         flowerQTYLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        flowerQTYLabel.setForeground(new java.awt.Color(255, 255, 255));
         flowerQTYLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flowerQTYLabel.setText("FLOWER QUANTITY");
 
         flowerNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        flowerNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         flowerNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flowerNameLabel.setText(" FLOWER NAME");
 
@@ -275,36 +301,60 @@ public class ManagerInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-//------------------------------------------------------------------------------
-//To navigate to the Login interface
-//------------------------------------------------------------------------------
-    LoginInterface logintInterface4 = null; 
     private void signOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signOutButtonActionPerformed
 
-        if(logintInterface4==null){
-           logintInterface4= new LoginInterface();
+        // To navigate to the Login interface
+        LoginInterface logintInterface4 = null;
+        if (logintInterface4 == null) {
+            logintInterface4 = new LoginInterface();
         }
         logintInterface4.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_signOutButtonActionPerformed
-//------------------------------------------------------------------------------
-    
-    
+
+
     private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneButtonActionPerformed
-        // TODO add your handling code here:
-        
-       String flowerType = flowerNameTextField.getText();// read flower type from admin
-       int flowerQuantity = Integer.parseInt(flowerQTYTextField.getText());// read number of flower from admin
-       double flowerPrice = Double.parseDouble(flowerPriceTextField.getText());// read the price of one flower from admin
-       Flower flower = new Flower(flowerType,flowerQuantity,flowerPrice); // create the new flower 
-       Admin.addFlower(flower);// add flower to the store
-       successfulAdditionLabel.setVisible(true);
+
+        // Read flower type from admin
+        String flowerType = flowerNameTextField.getText();
+        // Read number of flower from admin
+        int flowerQuantity = Integer.parseInt(flowerQTYTextField.getText());
+        // Read the price of one flower from admin
+        double flowerPrice = Double.parseDouble(flowerPriceTextField.getText());
+        // Create the new flower 
+        Flower flower = new Flower(flowerType, flowerQuantity, flowerPrice);
+        // Add flower to the store
+        Admin.addFlower(flower);
+        successfulAdditionLabel.setVisible(true);
+        flowerNameTextField.setText(null);
+        flowerQTYTextField.setText(null);
+        flowerPriceTextField.setText(null);
     }//GEN-LAST:event_doneButtonActionPerformed
 
-//------------------------------------------------------------------------------ 
-//main
-//------------------------------------------------------------------------------     
- 
+    private void flowerNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flowerNameTextFieldActionPerformed
+    
+    }//GEN-LAST:event_flowerNameTextFieldActionPerformed
+
+    private void flowerQTYTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flowerQTYTextFieldActionPerformed
+    
+    }//GEN-LAST:event_flowerQTYTextFieldActionPerformed
+
+    private void flowerPriceTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flowerPriceTextFieldActionPerformed
+         
+    }//GEN-LAST:event_flowerPriceTextFieldActionPerformed
+
+    private void flowerNameTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flowerNameTextFieldMouseClicked
+          successfulAdditionLabel.setVisible(false);
+    }//GEN-LAST:event_flowerNameTextFieldMouseClicked
+
+    private void flowerQTYTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flowerQTYTextFieldMouseClicked
+         successfulAdditionLabel.setVisible(false);
+    }//GEN-LAST:event_flowerQTYTextFieldMouseClicked
+
+    private void flowerPriceTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flowerPriceTextFieldMouseClicked
+         successfulAdditionLabel.setVisible(false);
+    }//GEN-LAST:event_flowerPriceTextFieldMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -336,7 +386,6 @@ public class ManagerInterface extends javax.swing.JFrame {
             }
         });
     }
-//------------------------------------------------------------------------------ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addFlowerPanel;

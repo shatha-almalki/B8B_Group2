@@ -6,8 +6,8 @@ public class Order {
 
     int QTY;
     String type;
-      double totalPrice;
-      double price;
+    double totalPrice;
+    double price;
     ArrayList<Order> userOrder = new ArrayList<>();
 
     public Order(int QTY, String type, double price) {
@@ -18,11 +18,11 @@ public class Order {
 
     public Order() {
     }
-    
-   public Order order(Order newOrder){
-       userOrder.add(newOrder);
-       return newOrder;
-   }
+
+    public Order order(Order newOrder) {
+        userOrder.add(newOrder);
+        return newOrder;
+    }
 
     public int getQTY() {
         return QTY;
@@ -39,12 +39,5 @@ public class Order {
     public void setType(String type) {
         this.type = type;
     }
-    
-    @Override
-    public String toString() {
-        return "Order{" + "QTY=" + QTY + ", type=" + type + ", userOrder=" + userOrder + '}';
-    }
-
-
 
 }

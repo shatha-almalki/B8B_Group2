@@ -42,7 +42,7 @@ public class CartTest {
      * Test of calculateBill method, of class Cart.
      */
     @Test
-    public void testCalculateBill() {
+    public void testCalculateTotal() {
         // 3 Blue flowers = 150 * 3 = 450
         System.out.println("calculateBill");
         ArrayList<Order> flowerForTest = new ArrayList<Order>();
@@ -51,7 +51,7 @@ public class CartTest {
 
         Cart instance = new Cart(flowerForTest);
         double expResult = 450;
-        double result = instance.calculateBill();
+        double result = instance.calculateTotal();
         assertEquals(expResult, result, 1);
         // TODO review the generated test code and remove the default call to fail.
     }
